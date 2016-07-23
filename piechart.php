@@ -1,33 +1,58 @@
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      <?php 
+<?php
+	include "libchart/libchart/classes/libchart.php";
 
-      ?>
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
+	header("Content-type: image/png");
+	
+	$servername = "ec2-54-179-133-213.ap-southeast-1.compute.amazonaws.com";
+	$username = "root";
+	$password = "root";
+	$dbname = "DreamADream";
 
-        var options = {
-          title: 'My Daily Activities',
-          is3D: true,
-        };
+	// Create connection
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-  </body>
-</html>
+
+	$conn = mysqli_connect("127.0.0.1", $username, $password, $dbname);
+	
+	
+
+	// Check connection
+	if (!$conn) {
+		die("Connection failed: " . mysqli_connect_error());
+	}
+	
+	$chart = new PieChart(500, 500);
+	
+	
+	$dataSet = new XYDataSet();
+	
+	// Select database
+	
+	$date = 2012;
+	// SQL query
+	
+	while($date<2017){
+	$strSQL = "SELECT count(person_id) as count_row FROM Person WHERE joined_date > '".$date."-01-01' AND joined_date < '".$date."-12-31' ";
+	//$strSQL ="SELECT * FROM Person ";
+	
+	
+	$result = mysqli_query($conn, $strSQL);
+	
+	
+		
+		
+		
+	$row = mysqli_fetch_assoc($result); 
+	
+		
+	$dataSet->addPoint(new Point($date+"",$row[count_row]));
+	$chart->setDataSet($dataSet);
+	
+	
+	$date++;
+	}
+	
+
+	
+	$chart->render();
+	
+?>

@@ -15,6 +15,13 @@
 </head>
 
 <style>
+.addWorkshop
+{
+	width:80%;
+	margin:auto;
+	border: 1px solid grey;
+	
+}
 body{
         padding-top: 40px;
     }
@@ -112,7 +119,7 @@ body{
 
 
 
-$servername = "ec2-54-179-133-213.ap-southeast-1.compute.amazonaws.com";
+/*$servername = "ec2-54-179-133-213.ap-southeast-1.compute.amazonaws.com";
 $username = "root";
 $password = "root";
 $dbname = "DreamADream";
@@ -137,14 +144,14 @@ if (!$conn) {
 	{
 		if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
-}		$sql = "SELECT person_id, name, email FROM Person" ;
+}		$sql = "SELECT name, email FROM Person" ;
 		$result = mysqli_query($conn, $sql);
 		
 		if (!is_null($result) && mysqli_num_rows($result) > 0) {
 			while($row = mysqli_fetch_assoc($result)) {
 			
 			$output ="";
-			$output.= '<a href="addToWorkshop.php?id='.$row['person_id'].'" class="list-group-item ">
+			$output.= '<a href="#" class="list-group-item ">
 				  <h4 class="list-group-item-heading">'.$row['name'].'</h4>
 				  <p class="list-group-item-text">'.$row['email'].'</p>
 				</a>';
@@ -153,7 +160,7 @@ if (!$conn) {
 		}
 		
 	
-	}
+	}*/
 ?>
 
 <body>
@@ -230,20 +237,55 @@ if (!$conn) {
   		</div><!-- End Container-->
   	</nav><!-- End navbar -->
 	
-	<div class="container">
-	  <h2>List Group With Custom Content</h2>
-	  <div class="list-group">
-	  
-		<?php 
-		
-		output($conn);
-		?>
-		
-		
-	  </div>
+	
 </div>
 
-
+<div class="container">
+	
+	<div  class="row" style="margin-top : 30px" >
+		<div class="col-sm-4">
+			<p>
+				<h3> </h3> 
+		</p>
+		</div>
+		<div class="col-sm-8 progress" style="margin-top: 30px">
+			
+				  <div class="progress-bar" role="progressbar" aria-valuenow="70"
+				  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+					70%
+				  </div>
+				
+		</div>
+		
+	</div>
+	
+</style>
+	<form class="form-inline" >
+		<div class="row" >
+			<div class="col-sm-6" style="margin: 10px"> <h3>Add workshop </h3>
+			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+			  <span class="caret"></span></button>
+			  <select class="dropdown-menu"id="menu">
+			 <option value="1">javascript</option>
+				<option value="2" selected="selected">html</option>
+				<option value="3">CSS</option>
+			  </select>
+			  <button class="btn btn-primary" type="submit"onclick="clicked();">submit</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+		var e = document.getElementById("ddlViewBy");
+var strUser = e.options[e.selectedIndex].value;
+</script>
+		
+	</form>
+	<script type="text/javascript">
+function clicked() {
+    alert('You have added to the workshop');
+}
+</script>
+	
+</div>
 
 
 <!-- Footer -->
