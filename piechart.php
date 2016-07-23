@@ -1,33 +1,33 @@
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      <?php 
+<?php
+	include "libchart/libchart/classes/libchart.php";
 
-      ?>
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
+	header("Content-type: image/png");
+	
+	$data = array();
+	$chart = new PieChart(500, 500);
 
-        var options = {
-          title: 'My Daily Activities',
-          is3D: true,
-        };
+	$dataSet = new XYDataSet();
+	mysql_connect("127.0.0.1", "root", "root") or die (mysql_error ());
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-  </body>
-</html>
+	// Select database
+	mysql_select_db("DreamADream") or die(mysql_error());
+	$date = 2012;
+	// SQL query
+	while($date<2017){
+	$strSQL = "SELECT count(person_id) as count_row FROM Person WHERE joined_date > '".$date."-01-01' AND joined_date< '".$date."-12-31' ";
+
+	// Execute the query (the recordset $rs contains the result)
+	$rs = mysql_query($strSQL);
+	// Loop the recordset $rs
+	// Each row will be made into an array ($row) using mysql_fetch_array
+	$row = mysql_fetch_array($rs)
+	 
+	$dataSet->addPoint(new Point($date,$row[count_row]));
+	$chart->setDataSet($dataSet);
+	$date++;
+	}
+	
+
+	
+	$chart->render();
+?>
