@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Dream A Dream </title>
+	<title>Contact Us </title>
 	<meta name="description" content="Wiredwiki App">
     
 	<!-- Latest compiled and minified CSS -->
@@ -47,7 +47,7 @@ body{
     display: block;
 }
 
-.dropdown-content a:hover {background-color: #445}
+.dropdown-content a:hover {background-color: #f1f1f1}
 
 .dropdown:hover .dropdown-content {
     display: block;
@@ -123,12 +123,12 @@ body{
   					<span class="icon-bar"></span>
   				</button>
 				
-  				<a href="" class="navbar-brand" style="background-color:black;;color:white">Dream A Dream</a>
+  				<a href="index.html" class="navbar-brand" style="color:white">Dream A Dream</a>
   			</div>
             <!-- Navbar Header-->
   			<div class="collapse navbar-collapse" id="navbar-collapse">
   			<ul class="nav navbar-nav navbar-right">
-        <li><p class="navbar-text" style="color:white">Already have an account?</p></li>
+        <li><p class="navbar-text"style="color:white">Already have an account?</p></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white"><b>Login</b> <span class="caret"></span></a>
             <ul id="login-dp" class="dropdown-menu">
@@ -177,7 +177,7 @@ body{
   </div>
 </div> </li>
   					 
-  					<li><a href="contactus.php" style="color:white">ContactUs</a> 
+  					<li><a href="#contact" style="background-color:black;color:white">ContactUs</a> 
   				</ul>
   			</div>
   		</div><!-- End Container-->
@@ -185,51 +185,75 @@ body{
 
 
 <!-- Gallery -->
-    <div class="container">
-        <section>
-            <div class="page-header" id="gallery">
-                <h2><center>Gallery<small></small></h2>
-            </div>
-
-            <div class="carousel slide" id="screenshot-carousel" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#screenshot-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#screenshot-carousel" data-slide-to="1"></li>
-                    <li data-target="#screenshot-carousel" data-slide-to="2"></li>
-                    <li data-target="#screenshot-carousel" data-slide-to="3"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="images/children-learning-with-computer.jpg" alt="Text of the image">
-                        
-                    </div>
-                    <div class="item">
-                        <img src="images/Painting-Blocks.jpg" alt="Text of the image">
-                        
-                    </div>
-                    <div class="item">
-                        <img src="images/supporting_your_adopted_children_as_they_try_to_fit_in_at_school.jpg" alt="Text of the image"/>
-                        
-                    </div>
-                    
-
-                </div><!-- End Carousel inner -->
-                <a href="#screenshot-carousel" class="left carousel-control" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a href="#screenshot-carousel" class="right carousel-control" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </div><!-- End Carousel -->
-
-        </section>
-    </div>
-
+    
+            
 
 
 <!-- Contact -->
 
-  
+  <div class="container">
+    <section>
+
+        <div class="row">
+          <div class="col-lg-4">
+          <hr>
+            <p>Send us a message, or contact us from the address below</p>
+
+
+            <address>
+              <strong>
+              No. 398/E</strong>, </br>17th Cross, 9th Main,</br> 3rd Block, Jayanagar,</br> Bangalore - 560011, India
+                T +91.80.40951084
+            </address>
+          </div>
+          
+          <div class="col-lg-8">
+            <form action="" class="form-horizontal">
+              <div class="form-group">
+              <hr>
+                <label for="user-name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="user-name" placeholder="Enter you name">
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-email" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="user-email" placeholder="Enter you Email Address">
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-url" class="col-lg-2 control-label">Your Website</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="user-email" placeholder="If you have Any.">
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-message" class="col-lg-2 control-label">Any Message</label>
+                <div class="col-lg-10">
+                  <textarea name="user-message" id="user-message" class="form-control" 
+                  cols="20" rows="10" placeholder="Enter your Message"></textarea>
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+
+             
+
+            </form>
+          </div>
+        </div><!-- End the row -->
+
+    </section>
+  </div>
+
 <!-- Footer -->
   
     <footer>
@@ -243,7 +267,7 @@ body{
           <li><a href="http://www.youtube.com/wiredwiki">YouTube</a></li>
         </ul>
 
-      
+        
 
       </div><!-- end Container-->
       
