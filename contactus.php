@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Dream A Dream </title>
+	<title>Contact Us </title>
 	<meta name="description" content="Wiredwiki App">
     
 	<!-- Latest compiled and minified CSS -->
@@ -20,11 +20,7 @@ body{
 
     }
 .dropbtn {
-<<<<<<< HEAD
     background-color: transparent;
-=======
-    
->>>>>>> 7302916048c12239044c1889bb8690354c3aedb1
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -51,14 +47,14 @@ body{
     display: block;
 }
 
-.dropdown-content a:hover {background-color: #445}
+.dropdown-content a:hover {background-color: #f1f1f1}
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
 .dropdown:hover .dropbtn {
-    
+    background-color: #3e8e41;
 }
 #login-dp{
     min-width: 250px;
@@ -127,12 +123,12 @@ body{
   					<span class="icon-bar"></span>
   				</button>
 				
-  				<a href="" class="navbar-brand" style="background-color:black;;color:white">Dream A Dream</a>
+  				<a href="index.html" class="navbar-brand" style="color:white">Dream A Dream</a>
   			</div>
             <!-- Navbar Header-->
   			<div class="collapse navbar-collapse" id="navbar-collapse">
   			<ul class="nav navbar-nav navbar-right">
-        <li><p class="navbar-text" style="color:white">Already have an account?</p></li>
+        <li><p class="navbar-text"style="color:white">Already have an account?</p></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white"><b>Login</b> <span class="caret"></span></a>
             <ul id="login-dp" class="dropdown-menu">
@@ -168,14 +164,8 @@ body{
             </ul>
         </li>
       </ul>
-<<<<<<< HEAD
   				<ul class="nav navbar-nav"> 
   					<li><a href="#events" style="color:white">Upcoming Events</a> 
-=======
-  				<ul class="nav navbar-nav">
-  					<li><a href="#dashboard">Dashboard</a> 
-  					<li><a href="#gallery">Gallery</a> 
->>>>>>> 7302916048c12239044c1889bb8690354c3aedb1
   					<li>
     <div class="dropdown">
     <a href="#programs"><button class="dropbtn">Programs</button></a>
@@ -187,7 +177,7 @@ body{
   </div>
 </div> </li>
   					 
-  					<li><a href="contactus.php" style="color:white">ContactUs</a> 
+  					<li><a href="#contact" style="background-color:black;color:white">ContactUs</a> 
   				</ul>
   			</div>
   		</div><!-- End Container-->
@@ -195,73 +185,14 @@ body{
 
 
 <!-- Gallery -->
-    <div class="container">
-        <section>
-            <div class="page-header" id="gallery">
-             
-            </div>
-
-            <div class="carousel slide" id="screenshot-carousel" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#screenshot-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#screenshot-carousel" data-slide-to="1"></li>
-                    <li data-target="#screenshot-carousel" data-slide-to="2"></li>
-                    <li data-target="#screenshot-carousel" data-slide-to="3"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="item active">
-<<<<<<< HEAD
-                        <img src="images/children-learning-with-computer.jpg" alt="Text of the image">
-                        
-                    </div>
-                    <div class="item">
-                        <img src="images/Painting-Blocks.jpg" alt="Text of the image">
-                        
-                    </div>
-                    <div class="item">
-                        <img src="images/supporting_your_adopted_children_as_they_try_to_fit_in_at_school.jpg" alt="Text of the image"/>
-                        
-                    </div>
-                    
-=======
-                        <img src="a.jpg" alt="Text of the image">
-                      
-                    </div>
-                    <div class="item">
-                        <img src="b.jpg" alt="Text of the image">
-                      
-                    </div>
-                    <div class="item">
-                        <img src="c.jpg" alt="Text of the image">
-                     
-                    </div>
     
->>>>>>> 7302916048c12239044c1889bb8690354c3aedb1
-
-                </div><!-- End Carousel inner -->
-                <a href="#screenshot-carousel" class="left carousel-control" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a href="#screenshot-carousel" class="right carousel-control" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </div><!-- End Carousel -->
-
-        </section>
-    </div>
-
+            
 
 
 <!-- Contact -->
 
-<<<<<<< HEAD
-  
-=======
   <div class="container">
     <section>
-                    <div class="page-header" id="">
-                <h2><center>Contact<small></small></h2>
-            </div>
 
         <div class="row">
           <div class="col-lg-4">
@@ -323,7 +254,6 @@ body{
     </section>
   </div>
 
->>>>>>> 7302916048c12239044c1889bb8690354c3aedb1
 <!-- Footer -->
   
     <footer>
@@ -337,7 +267,7 @@ body{
           <li><a href="http://www.youtube.com/wiredwiki">YouTube</a></li>
         </ul>
 
-      
+        
 
       </div><!-- end Container-->
       
