@@ -28,42 +28,114 @@ h2{font-size: 24px; font-weight: 600; margin: 20px 0 10px; text-align: center;}
 .timeline-both-side li.opposite-side .timeline-description{float: right;}
 /*= timeline css for data in both side end =*/
 </style>
+<?php
+include "connection.php";
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+function output($date,$conn)
+{
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+		$output = "";
+		$id = 1;
+		$date1=$date;
+		
+		
+		$sql = "SELECT program.program_name, person_program.joining_date, person_program.end_date, person.person_id FROM person, person_program, program WHERE person.person_id = person_program.person_id AND person_program.program_id = program.program_id AND joining_date > '".$date."-01-01' AND joining_date < '".$date."-12-31' ORDER BY joining_date ";
+		
+		
+		$result = mysqli_query($conn, $sql);
+		
+		$i = 1;
+		
+		if (!is_null($result) && mysqli_num_rows($result) > 0) {
+			// output data of each row
+			
+			if($i==1)
+			{	$output_header ='<p style="text-align="center">
+					'.$date1.'
+				</p>
+				 <ul class="timeline-both-side">';
+				 echo $output_header;
+			}
+			while($row = mysqli_fetch_assoc($result)) {
+				$output = "";
+				if(($i%2)==0)
+				{	$output.='<li>
+						<div class="border-line"></div>
+						<div class="timeline-description">
+							<p>'. $row['program_name'].'</p>
+						</div>
+					</li>';
+				}
+				else{
+					$output.= '<li class="opposite-side">
+						<div class="border-line"></div>
+						<div class="timeline-description">
+                    <p>'. $row['program_name'].'</p>
+						</div>
+					</li>';
+				}
+				$i++;
+				echo $output;
+				}
+				echo "</ul>";
+				
+		}
+		
+}
+
+
+?>
 <body>
 
         <div class="row">
         <h2>Timeline Data in both side</h2>
-        <ul class="timeline-both-side">
-            <li>
-                <div class="border-line"></div>
-                <div class="timeline-description">
-                    <p><?php echo "Hello";?></p>
-                </div>
-            </li>
-            <li class="opposite-side">
-                <div class="border-line"></div>
-                <div class="timeline-description">
-                    <p> </p>
-                </div>
-            </li>
-            <li>
-                <div class="border-line"></div>
-                <div class="timeline-description">
-                    <p></p>
-                </div>
-            </li>
-            <li class="opposite-side">
-                <div class="border-line"></div>
-                <div class="timeline-description">
-                    <p></p>
-                </div>
-            </li>
-            <li>
-                <div class="border-line"></div>
-                <div class="timeline-description">
-                    <p></p>
-                </div>
-            </li>
-        </ul>
+			<?php $date = 2014 ?>
+			
+			<?php
+				while($date<2017)
+				{	output($date,$conn);
+					$date++;
+				}
+			?>
+       <!-- <ul class="timeline-both-side">
+			<?php $date = 2014 ?>
+			<p style="text-align='center' "><?php $output = output($date,$conn); $date++; ?>
+			<p style="text-align='center' "><?php $output = output($date,$conn); $date++; ?>
+			<p style="text-align='center' "><?php $output = output($date,$conn); $date++; ?>
+			<p style="text-align='center' "><?php $output = output($date,$conn); $date++; ?>
+			<p style="text-align='center' "><?php $output = output($date,$conn); $date++; ?>
+			<p style="text-align='center' "><?php $output = output($date,$conn); $date++; ?>
+			<p style="text-align='center' "><?php echo $date ;  ?> </p>
+			<?php 
+				echo $date ;
+				$output = output($date,$conn);
+				 
+				$date++;
+			?>
+			<p style="text-align='center' "><?php echo $date ; ?> </p>
+			<?php 
+				echo $date ;
+				$output = output($date,$conn);
+				 
+				$date++;
+			?>
+			<p style="text-align='center' "><?php echo $date ; ?> </p>
+			<?php 
+				echo $date ;
+				$output = output($date,$conn);
+				 
+				$date++;
+			?>
+			
+        </ul> -->
     </div>
 
 
@@ -71,3 +143,7 @@ h2{font-size: 24px; font-weight: 600; margin: 20px 0 10px; text-align: center;}
     </div>
 </body>
 </html>
+<?php
+	mysqli_close($conn);
+	unset($conn);
+?>
