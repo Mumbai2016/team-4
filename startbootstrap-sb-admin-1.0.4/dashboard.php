@@ -54,12 +54,17 @@
                     <li class="active">
                         <a href="index.html">Dashboard</a>
                     </li>
-                    <li>
-                        <a href="charts.html">Mentee Information</a>
+					<li class="active">
+                        <a href="charts.php">Mentee Information</a>
                     </li>
-                    <li>
-                        <a href="#">Message Mentee</a>
+					<li class="active">
+                        <a href="message.php">Message Mentee</a>
                     </li>
+					<li class="active">
+                        <a href="student_list.php">List Members</a>
+                    </li>
+					
+                    
                     
                     
                 </ul>
@@ -82,10 +87,14 @@
                                 <i class="fa fa-dashboard"></i> Dashboard
                             </li>
                             <li>
-                                <a href="charts.html">Mentee Information</a>
+                                <a href="charts.php">Mentee Information</a>
                             </li>
+							
                             <li>
-                                <a href="#">Message Mentee</a>
+                                <a href="message.php">Message Mentee</a>
+                            </li>
+							<li>
+                                <a href="student_list.php">List Members</a>
                             </li>
                         </ol>
                     </div>
@@ -104,26 +113,53 @@
                             </div>
                             <div class="panel-body">
                                 <div id="morris-donut-chart">
-                                    <select style="">
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                    </select>
-                                    <select>
-                                        <option value="Age">Age</option>
-                                        <option value="Dropout">Dropout</option>
-
-
-                                    </select>
+                                  <h3> Last 5 years enrollement  </h3>
                                 </div>
                                 <div class="text-right">
                                     <a href="piechart.php">View Details <i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                </div>
+				 <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i>Pie Chart </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="morris-donut-chart">
+                                  <h3> Employed and Unemployed  </h3>
+                                </div>
+                                <div class="text-right">
+                                    <a href="chart2.php">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+				<div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i>Pie Chart </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="morris-donut-chart">
+                                  <h3> Girls and Boys Participation   </h3>
+                                </div>
+                                <div class="text-right">
+                                    <a href="chart3.php">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+				
+				
+				
                     
                 <!-- /.row -->
-
+				
+				
             </div>
             <!-- /.container-fluid -->
 

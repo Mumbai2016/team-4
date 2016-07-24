@@ -109,7 +109,32 @@ body{
 
 
 </style>
+<?php
+require('db.php');
+	session_start();
+    // If form submitted, insert values into the database.
+    if (isset($_POST['email'])){
+        
+        $password = $_POST['password'];
+		$email = test_input($_POST["email"]);
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		  $emailErr = "Invalid email format"; 
+		}
+		$password = stripslashes($password);
+		$password = mysql_real_escape_string($password);
+	//Checking is user existing in the database or not
+        $query = "SELECT * FROM Person WHERE email='$email' and password='".md5($password)."'";
+		$result = mysql_query($query) or die(mysql_error());
+		$rows = mysql_num_rows($result);
+        if($rows==1){
+			$_SESSION['username'] = $username;
+			header("Location: index.php"); // Redirect user to index.php
+            }else{
+				echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
+				}
+    }
 
+?>
 <body>
 
   <!-- Navbar -->
@@ -138,12 +163,16 @@ body{
                                  <form class="form" role="form" method="post" action="startbootstrap-sb-admin-1.0.4/index.html" accept-charset="UTF-8" id="login-nav">
                                         <div class="form-group">
                                              <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                             <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                             <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
                                         </div>
                                         <div class="form-group">
                                              <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                             <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                             
+                                             <input type="password" name="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                         </div>
+										<div class="form-group">
+											<label class="sr-only" for="exampleInputEmail2">Submit</label>
+                                             <input type="submit"  class="form-control" id="exampleInputEmail2" value="submit" >
+										</div>	
                                    </form>
                             </div>
                             
@@ -199,7 +228,7 @@ body{
   </div>
 </div> </li>
   					 
-  					<li><a href="#contact" style="color:white">ContactUs</a> 
+  					<li><a href="#contact" style="color:white">Contact Us</a> 
   				</ul>
   			</div>
   		</div><!-- End Container-->

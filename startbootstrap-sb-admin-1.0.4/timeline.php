@@ -43,11 +43,18 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 		$output = "";
-		$id = 1;
+		$id = $_GET['id'];
 		$date1=$date;
 		
 		
-		$sql = "SELECT program.program_name, person_program.joining_date, person_program.end_date, person.person_id FROM person, person_program, program WHERE person.person_id = person_program.person_id AND person_program.program_id = program.program_id AND joining_date > '".$date."-01-01' AND joining_date < '".$date."-12-31' ORDER BY joining_date ";
+		$sql = "SELECT Program.program_name, Person_Program.joining_date, Person_Program.ending_date
+		 FROM  Person_Program, Program
+		WHERE Person_Program.person_id =".$id."
+		AND Person_Program.program_id = Program.program_id 
+		AND joining_date > '".$date."-01-01' 
+		AND joining_date < '".$date."-12-31' 
+		ORDER BY joining_date ";
+		
 		
 		
 		$result = mysqli_query($conn, $sql);
@@ -58,7 +65,7 @@ if (!$conn) {
 			// output data of each row
 			
 			if($i==1)
-			{	$output_header ='<p style="text-align="center">
+			{	$output_header ='<p style="text-align=center;margin-left:50%;margin-right:50%">
 					'.$date1.'
 				</p>
 				 <ul class="timeline-both-side">';
@@ -96,8 +103,8 @@ if (!$conn) {
 <body>
 
         <div class="row">
-        <h2>Timeline Data in both side</h2>
-			<?php $date = 2014 ?>
+        <h2>Timeline</h2>
+			<?php $date = 2013 ?>
 			
 			<?php
 				while($date<2017)

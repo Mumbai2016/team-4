@@ -72,10 +72,10 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.html">Dashboard</a>
+                        <a href="dashboard.php">Dashboard</a>
                     </li>
                     <li>
-                        <a href="charts.html">Mentee Information</a>
+                        <a href="charts.php">Mentee Information</a>
                     </li>
                     
                 </ul>
@@ -109,8 +109,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h2 class="page-header">Mentee Timeline</h2>
-                        <p><form action="timeline.php">
-                                <input type="text" placeholder="Enter ID of mentee" style="width:30%;height:40px;border-radius:5px"/>
+                        <p><form action="timeline.php" method="get">
+                                <input type="text" name="id" placeholder="Enter ID of mentee" style="width:30%;height:40px;border-radius:5px"/>
                                 <input type="submit" value="Submit" style="height:40px;border-radius:5px;width:10%;background-color:transparent"/>
                         </form>
                         </p>
