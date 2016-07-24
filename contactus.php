@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Dream A Dream </title>
+	<title>Contact Us </title>
 	<meta name="description" content="Wiredwiki App">
     
 	<!-- Latest compiled and minified CSS -->
@@ -47,7 +47,7 @@ body{
     display: block;
 }
 
-.dropdown-content a:hover {background-color: #445}
+.dropdown-content a:hover {background-color: #f1f1f1}
 
 .dropdown:hover .dropdown-content {
     display: block;
@@ -123,34 +123,12 @@ body{
   					<span class="icon-bar"></span>
   				</button>
 				
-  				<a href="" class="navbar-brand" style="color:white">Dream A Dream</a>
+  				<a href="index.html" class="navbar-brand" style="color:white">Dream A Dream</a>
   			</div>
             <!-- Navbar Header-->
   			<div class="collapse navbar-collapse" id="navbar-collapse">
   			<ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white"><b>Admin Login</b> <span class="caret"></span></a>
-            <ul id="login-dp" class="dropdown-menu">
-                <li>
-                     <div class="row">
-                            <div class="col-md-12">
-                            
-                                 <form class="form" role="form" method="post" action="startbootstrap-sb-admin-1.0.4/index.html" accept-charset="UTF-8" id="login-nav">
-                                        <div class="form-group">
-                                             <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                             <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-                                        </div>
-                                        <div class="form-group">
-                                             <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                             <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                             
-                                   </form>
-                            </div>
-                            
-                     </div>
-                </li>
-            </ul>
-        </li>
+        <li><p class="navbar-text"style="color:white">Already have an account?</p></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white"><b>Login</b> <span class="caret"></span></a>
             <ul id="login-dp" class="dropdown-menu">
@@ -179,7 +157,7 @@ body{
                                  </form>
                             </div>
                             <div class="bottom text-center">
-                                New here ? <a href="form1.html"><b>Join Us</b></a>
+                                New here ? <a href="#"><b>Join Us</b></a>
                             </div>
                      </div>
                 </li>
@@ -199,7 +177,7 @@ body{
   </div>
 </div> </li>
   					 
-  					<li><a href="#contact" style="color:white">ContactUs</a> 
+  					<li><a href="#contact" style="background-color:black;color:white">ContactUs</a> 
   				</ul>
   			</div>
   		</div><!-- End Container-->
@@ -207,50 +185,13 @@ body{
 
 
 <!-- Gallery -->
-    <div class="container">
-        <section>
-            <div class="page-header" id="gallery">
-                <h2><center><small></small></h2>
-            </div>
-
-            <div class="carousel slide" id="screenshot-carousel" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#screenshot-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#screenshot-carousel" data-slide-to="1"></li>
-                    <li data-target="#screenshot-carousel" data-slide-to="2"></li>
-                    <li data-target="#screenshot-carousel" data-slide-to="3"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="images/a.jpg" alt="Text of the image">
-                        
-                    </div>
-                    <div class="item">
-                        <img src="images/b.jpg" alt="Text of the image">
-                        
-                    </div>
-                    <div class="item">
-                        <img src="images/c.jpg" alt="Text of the image"/>
-                        
-                    </div>
-                    
-
-                </div><!-- End Carousel inner -->
-                <a href="#screenshot-carousel" class="left carousel-control" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a href="#screenshot-carousel" class="right carousel-control" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </div><!-- End Carousel -->
-
-        </section>
-    </div>
-
+    
+            
 
 
 <!-- Contact -->
-<div class="container" id="contact">
+
+  <div class="container">
     <section>
 
         <div class="row">
@@ -313,8 +254,6 @@ body{
     </section>
   </div>
 
-
-  
 <!-- Footer -->
   
     <footer>
@@ -328,7 +267,7 @@ body{
           <li><a href="http://www.youtube.com/wiredwiki">YouTube</a></li>
         </ul>
 
-      
+        
 
       </div><!-- end Container-->
       
